@@ -1,0 +1,66 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$text-color: #333;
+$font-stack: 'Helvetica Neue', sans-serif;
+
+// Mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+        border-radius: $radius;
+}
+
+@mixin box-shadow($x, $y, $blur, $color) {
+  -webkit-box-shadow: $x $y $blur $color;
+     -moz-box-shadow: $x $y $blur $color;
+        box-shadow: $x $y $blur $color;
+}
+
+// Base Styles
+body {
+  font-family: $font-stack;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+// Header
+.header {
+  background-color: $primary-color;
+  color: white;
+  padding: 20px;
+  @include border-radius(5px);
+  
+  .logo {
+    font-size: 2em;
+  }
+}
+
+// Main Content
+.main-content {
+  padding: 20px;
+  
+  h1 {
+    color: $secondary-color;
+  }
+  
+  .card {
+    background: white;
+    padding: 15px;
+    @include border-radius(10px);
+    @include box-shadow(0px, 4px, 6px, rgba(0, 0, 0, 0.1));
+    
+    h2 {
+      margin-top: 0;
+    }
+  }
+}
+
+// Footer
+.footer {
+  background-color: $primary-color;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
